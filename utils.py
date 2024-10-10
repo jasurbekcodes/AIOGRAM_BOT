@@ -9,3 +9,26 @@ async def get_list(name):
         return str(users[name])
     except KeyError:
         return "Bunday odam darsda yo'q!"
+
+
+async def calculate(text: str):
+    try:
+        if '+' in text:
+            a, b = text.split('+')
+            ans = int(a) + int(b)
+        elif '-' in text:
+            a, b = text.split('-')
+            ans = int(a) - int(b)
+        elif '*' in text:
+            a, b = text.split('*')
+            ans = int(a) * int(b)
+        elif '/' in text:
+            a, b = text.split('/')
+            ans = int(a) / int(b)
+
+        return str(ans)
+    except ValueError:
+        print("Error: Non-numeric input")
+    except ZeroDivisionError:
+        print("Error: Division by zero")
+
