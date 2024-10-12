@@ -1,3 +1,7 @@
+from contents import words
+
+
+
 async def get_list(name):
     users = {
         'John': 'Darsda bor',
@@ -32,3 +36,6 @@ async def calculate(text: str):
     except ZeroDivisionError:
         print("Error: Division by zero")
 
+async def get_word(key, lang = 'uz'):
+    word = words.get(key+ '-' + lang)
+    return word
